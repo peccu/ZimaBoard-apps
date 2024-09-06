@@ -1,0 +1,41 @@
+name: tailscale
+services:
+  tailscale:
+    cpu_shares: 10
+    command: []
+    container_name: zimaboard-tailscale
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    environment:
+      - TS_AUTHKEY=tskey-auth-
+    hostname: zimaboard-tailscale
+    image: tailscale/tailscale:latest
+    labels:
+      icon: https://icon.casaos.io/main/all/tailscale.png
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /var/lib
+        target: /var/lib
+      - type: bind
+        source: /dev/net/tun
+        target: /dev/net/tun
+    ports: []
+    devices: []
+    cap_add: []
+    network_mode: host
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://icon.casaos.io/main/all/tailscale.png
+  index: /
+  is_uncontrolled: false
+  port_map: ""
+  scheme: http
+  store_app_id: tailscale
+  title:
+    custom: tailscale
