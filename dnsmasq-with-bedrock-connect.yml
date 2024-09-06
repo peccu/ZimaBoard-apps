@@ -10,7 +10,7 @@ services:
     environment:
       - EULA=TRUE
       - MINECRAFT_SERVER=192.168.0.1
-    image: ghcr.io/peccu/dnsmasq-for-minecraft-bedrock:main
+    image: ghcr.io/peccu/dnsmasq-for-minecraft-bedrock:latest
     labels:
       icon: https://icon.casaos.io/main/all/dnsmasq-for-minecraft-bedrock.png
     restart: unless-stopped
