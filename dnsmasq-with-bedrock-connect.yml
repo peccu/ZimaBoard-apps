@@ -1,0 +1,38 @@
+name: dnsmasq_with_bedrock_connect
+services:
+  main_app:
+    cpu_shares: 10
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    environment:
+      - EULA=TRUE
+      - MINECRAFT_SERVER=192.168.0.1
+    image: ghcr.io/peccu/dnsmasq-for-minecraft-bedrock:main
+    labels:
+      icon: https://icon.casaos.io/main/all/dnsmasq-for-minecraft-bedrock.png
+    ports:
+      - target: 53
+        published: "53"
+    restart: unless-stopped
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: host
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://icon.casaos.io/main/all/dnsmasq-for-minecraft-bedrock.png
+  index: /
+  is_uncontrolled: false
+  port_map: ""
+  scheme: http
+  store_app_id: dnsmasq_with_bedrock_connect
+  title:
+    custom: dnsmasq with Bedrock Connect
