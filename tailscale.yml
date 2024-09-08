@@ -3,14 +3,15 @@ services:
   tailscale:
     cpu_shares: 10
     command: []
-    container_name: zimaboard-tailscale
+    container_name: tailscale
     deploy:
       resources:
         limits:
           memory: 256M
     environment:
       - TS_AUTHKEY=tskey-auth-
-    hostname: zimaboard-tailscale
+      - TS_HOSTNAME=ZimaBoard
+    hostname: tailscale
     image: tailscale/tailscale:latest
     labels:
       icon: https://icon.casaos.io/main/all/tailscale.png
