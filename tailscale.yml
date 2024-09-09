@@ -11,6 +11,7 @@ services:
     environment:
       - TS_AUTHKEY=tskey-auth-
       - TS_HOSTNAME=ZimaBoard
+      - TS_STATE_DIR=/var/lib/tailscale
     hostname: tailscale
     image: tailscale/tailscale:latest
     labels:
