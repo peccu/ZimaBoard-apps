@@ -31,7 +31,8 @@ services:
         target: /usr/share/elasticsearch/data
     devices: []
     cap_add: []
-    network_mode: bridge
+    networks:
+      - es
     privileged: false
     container_name: ""
     hostname: ""
@@ -61,10 +62,14 @@ services:
         target: /usr/share/kibana/data
     devices: []
     cap_add: []
-    network_mode: bridge
+    networks:
+      - es
     privileged: false
     container_name: ""
     hostname: ""
+networks:
+  es:
+    name: es
 x-casaos:
   author: self
   category: self
