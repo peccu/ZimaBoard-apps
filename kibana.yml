@@ -48,6 +48,7 @@ services:
       - ELASTICSEARCH_PASSWORD=elastic
       - ELASTICSEARCH_USERNAME=kibana_system
       - SERVERNAME=kibana
+      - SERVER_PUBLICBASEURL=http://your-hostname:5601/
     image: docker.elastic.co/kibana/kibana:8.15.1
     labels:
       icon: https://icon.casaos.io/main/all/kibana.png
